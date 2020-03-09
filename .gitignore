@@ -18,6 +18,9 @@ web/.htaccess
 .env.*
 !.env.example
 
+#Editors
+.idea
+
 # Composer
 /vendor
 
