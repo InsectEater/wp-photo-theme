@@ -24,11 +24,14 @@ a {
 }
 
 .wpt-page-banner {
-    background-color: darkblue;
+    background-color: #212121;
     max-width: 1024px;
     margin: 0 auto;
     padding: 3em;
     position: relative;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
 }
 
 
@@ -128,6 +131,10 @@ a {
 
 @media only screen and (max-width: 960px) {
 
+    .wpt-page-banner {
+        padding: 1.5em;
+    }
+
     .primary-menu-wrapper li {
     /*    border-left: none;*/
         display: block;
@@ -160,6 +167,7 @@ a {
     right: 0;
     font-size: 2em;
     padding: 0 0.2em;
+    z-index: 4;
 }
 
 .mobile-menu-wrapper .mobile-menu-button:after {
@@ -211,6 +219,11 @@ a {
 
 @media only screen and (max-width: 520px) {
 
+    .wpt-page-banner {
+        padding: 0em;
+        min-height: 0;
+    }
+
     .header-titles {
         padding: 1em;
     }
@@ -225,6 +238,14 @@ a {
 
     .mobile-menu-wrapper.m-active .primary-menu {
         display: block;
+    }
+
+    #site-content {
+        padding: 1em;
+    }
+
+    #site-footer {
+        padding: 1em;
     }
 
 }

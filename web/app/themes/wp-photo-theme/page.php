@@ -10,6 +10,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 get_header();
+
 ?>
     <main id="site-content" role="main">
             <?php
