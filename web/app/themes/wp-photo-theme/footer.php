@@ -16,14 +16,11 @@
     <div class="section-inner">
         <div class="footer-credits">
             <p class="footer-copyright">&copy;
-                <?php
-                echo date_i18n(
-                    _x( 'Y', 'copyright date format', 'wpt' )
-                );
-                ?>
+                <?php echo date_i18n( _x( 'Y', 'copyright date format', 'wpt' ) ); ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
             </p><!-- .footer-copyright -->
         </div><!-- .footer-credits -->
+
         <a class="to-the-top" href="#site-header">
 						<span class="to-the-top-long">
 							<?php

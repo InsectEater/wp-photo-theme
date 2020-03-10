@@ -24,21 +24,8 @@ get_header();
                 get_template_part( 'template-parts/content', get_post_type() );
 
             }
-        } elseif ( is_search() ) {
-            ?>
-            <div class="no-search-results-form section-inner thin">
-                <?php
-                get_search_form(
-                    array(
-                        'label' => __( 'search again', 'twentytwenty' ),
-                    )
-                );
-                ?>
-            </div><!-- .no-search-results -->
-            <?php
         }
         ?>
-        <?php get_template_part( 'template-parts/pagination' ); ?>
     </main><!-- #site-content -->
 <?php // get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 <?php

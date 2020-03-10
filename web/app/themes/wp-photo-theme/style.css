@@ -14,10 +14,217 @@
 body {
     background-color: black;
     color: white;
+    font-family: Arial, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
 }
 
 .wpt-page-banner {
     background-color: darkblue;
     max-width: 1024px;
     margin: 0 auto;
+    padding: 3em;
+    position: relative;
+}
+
+
+#site-header {
+    padding-top: 0;
+}
+
+
+/* #### Header #### */
+
+.header-bar {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.header-titles {
+    padding-left: 1.5em;
+}
+
+.header-navigation-wrapper {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.mobile-menu-wrapper,
+.primary-menu-wrapper .sub-menu,
+.mobile-menu-wrapper .primary-menu {
+    display: none;
+}
+
+.primary-menu-wrapper ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-menu-wrapper li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border-left: 1px solid #333;
+    margin-right: -3px;
+}
+
+.primary-menu-wrapper li:hover {
+    background-color: rgba(40, 40, 40, 0.8);
+}
+
+.primary-menu-wrapper a {
+    text-decoration: none;
+    line-height: 3.5em;
+    padding: 0 1.5em;
+    color: rgb(144, 144, 144);
+    display: block;
+}
+
+.primary-menu-wrapper .current_page_item a:first-child,
+.primary-menu-wrapper .current-menu-ancestor > a {
+    color: white;
+}
+
+.primary-menu-wrapper .menu-item-has-children {
+    position: relative;
+}
+
+.primary-menu-wrapper .menu-item-has-children a:after {
+    content: " \25BC"
+}
+
+.primary-menu-wrapper .active .sub-menu {
+    display: block;
+}
+
+.primary-menu-wrapper .sub-menu {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 3.5em;
+    left: 0;
+    right: 0;
+}
+
+.primary-menu-wrapper .sub-menu li {
+    border-left: none;
+    display: block;
+}
+
+.primary-menu-wrapper .sub-menu a:after {
+    content: "";
+}
+
+/* #### Header - tablet #### */
+
+@media only screen and (max-width: 960px) {
+
+    .primary-menu-wrapper li {
+    /*    border-left: none;*/
+        display: block;
+        margin-right: 0;
+        text-align: left;
+    }
+
+    .primary-menu-wrapper a {
+        line-height: 2.5em;
+        padding: 0 3em 0 1.5em;
+    }
+
+    .primary-menu-wrapper .sub-menu {
+        top: 0;
+        position: relative;
+        background-color: transparent;
+    }
+
+    .primary-menu-wrapper .sub-menu a {
+        padding: 0 0.5em 0 3em;
+    }
+
+}
+
+/* #### Header - mobile #### */
+
+.mobile-menu-wrapper .mobile-menu-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    padding: 0 0.2em;
+}
+
+.mobile-menu-wrapper .mobile-menu-button:after {
+    content:'\2630';
+}
+.mobile-menu-wrapper .primary-menu {
+    position: absolute;
+    top: 2.2em;
+    left: 0;
+    right: 0;
+    background-color: #0f0f0f;
+    z-index: 2;
+    padding: 1em 0;
+    min-height: calc( 100% - 2em );
+}
+
+.mobile-menu-wrapper ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-menu-wrapper a {
+    color: rgb(144, 144, 144);;
+    text-decoration: none;
+    line-height: 2.5em;
+    padding: 0 0.5em 0 1em;
+    display: block;
+    border-bottom: 1px solid #333;
+}
+
+.mobile-menu-wrapper .sub-menu a {
+    padding-left: 2.5em;
+}
+
+.mobile-menu-wrapper .menu-item-has-children a:after {
+    content: " \25BC";
+    font-size: 0.8em;
+}
+
+.mobile-menu-wrapper .sub-menu a:after {
+    content: "";
+}
+
+.mobile-menu-wrapper .current_page_item a:first-child,
+.mobile-menu-wrapper .current-menu-ancestor > a {
+    color: white;
+}
+
+@media only screen and (max-width: 520px) {
+
+    .header-titles {
+        padding: 1em;
+    }
+
+    .primary-menu-wrapper {
+        display: none;
+    }
+
+    .mobile-menu-wrapper {
+        display: block;
+    }
+
+    .mobile-menu-wrapper.m-active .primary-menu {
+        display: block;
+    }
+
 }

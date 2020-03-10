@@ -13,5 +13,10 @@ function wpt_menus() {
     );
     register_nav_menus( $locations );
 }
-
 add_action( 'init', 'wpt_menus' );
+
+function wpt_register_scripts() {
+    $theme_version = wp_get_theme()->get( 'Version' );
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/js/main-script.js', ['jquery'], $theme_version, true );
+}
+add_action( 'wp_enqueue_scripts', 'wpt_register_scripts' );
