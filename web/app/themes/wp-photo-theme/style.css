@@ -23,7 +23,9 @@ a {
     color: white;
 }
 
-.wpt-page-banner {
+.wpt-page-banner,
+#banner,
+#banner1 {
     background-color: #212121;
     max-width: 1024px;
     margin: 0 auto;
@@ -32,13 +34,17 @@ a {
     min-height: 600px;
     background-size: cover;
     background-position: center;
+    /*transition: all 2s linear;*/
+    /*-webkit-transition-delay: 2s;*/
+    /*transition-delay: 2s;*/
+    /*!*-moz-transition: all duration timing-function delay|initial|inherit;*!*!*/
+    /*-moz-transition-delay: 2s;*/
+    /*-moz-transition: all 2s linear;*/
 }
-
 
 #site-header {
     padding-top: 0;
 }
-
 
 /* #### Header #### */
 
@@ -70,6 +76,7 @@ a {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 .primary-menu-wrapper li {
@@ -77,7 +84,6 @@ a {
     padding: 0;
     display: inline-block;
     border-left: 1px solid #333;
-    margin-right: -3px;
 }
 
 .primary-menu-wrapper li:hover {
@@ -134,6 +140,11 @@ a {
     .wpt-page-banner {
         padding: 1.5em;
     }
+
+    .primary-menu-wrapper ul {
+        display: block;
+    }
+
 
     .primary-menu-wrapper li {
     /*    border-left: none;*/
