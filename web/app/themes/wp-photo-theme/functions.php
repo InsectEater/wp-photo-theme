@@ -54,5 +54,7 @@ function wpt_inject_background_photos( $wpt_js_data ) {
 
     $background_photos_interval = get_field( 'background_photos_interval', $frontpage_id );
     $wpt_js_data[ 'background_photos_interval' ] = $background_photos_interval;
+    $transition_time = get_field( 'transition_time', $frontpage_id );
+    $wpt_js_data[ 'transition_time' ] = $transition_time;
     return ( $wpt_js_data );
 }

@@ -39,8 +39,11 @@ function wpt_rotate_photos() {
 	jQuery( '.wpt-page-banner' ).css( {'background-color': 'transparent', 'background-image' : 'none'} );
 	if ( ! wpt_js_data.background_photos &&  ! wpt_js_data.background_photos.length ) return;
 	wpt_set_background_photo();
+	let transition_time =  wpt_js_data.transition_time ?  wpt_js_data.transition_time * 1 : 2000;
+
+
 	let background_photos_interval = wpt_js_data.background_photos_interval ? wpt_js_data.background_photos_interval : 5000;
-		setInterval( wpt_set_background_photo, background_photos_interval * 1 + 4000 );
+		setInterval( wpt_set_background_photo, background_photos_interval * 1 + transition_time * 2 );
 }
 wpt_rotate_photos();
 
@@ -64,10 +67,11 @@ function wpt_set_background_photo( ) {
 	let new_bgr_url = wpt_js_data.background_photos[num1].sizes.large;
 
 	let $banner = jQuery('#banner');
+	let transition_time =  wpt_js_data.transition_time ?  wpt_js_data.transition_time * 1 : 2000;
 // debugger;
 	$banner.after( '<div id="banner1" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: blue; z-index: -1; opacity: 0; background-image: url('+ new_bgr_url +')"></div>' );
 	let $banner1 = jQuery( '#banner1' );
-	$banner1.animate( {opacity: '1'}, "2000", 'swing', function() {
+	$banner1.animate( {opacity: '1'}, transition_time * 1, 'swing', function() {
 		$banner.css( 'background-image', 'url(' + new_bgr_url + ')' ).animate( { opacity: '1' }, 100, 'swing', function() {
 			$banner1.remove();
 		} );
