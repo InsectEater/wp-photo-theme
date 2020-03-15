@@ -13,6 +13,9 @@ web/.htaccess
 # Logs
 *.log
 
+# Custom Plugins
+!web/app/plugins/wp-photo-theme
+
 # Dotenv
 .env
 .env.*
