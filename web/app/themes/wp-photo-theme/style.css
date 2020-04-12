@@ -14,7 +14,9 @@
 body {
     background-color: black;
     color: white;
-    font-family: Arial, Tahoma, sans-serif;
+    font-family: 'Comfortaa', Arial, Tahoma, sans-serif;
+    font-weight: 300;
+    line-height: 180%;
     margin: 0;
     padding: 0;
 }
@@ -28,12 +30,14 @@ a {
 #banner1 {
     background-color: #212121;
     max-width: 1024px;
+    min-height: 380px;
     margin: 0 auto;
     padding: 3em;
     position: relative;
     min-height: 600px;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
     /*transition: all 2s linear;*/
     /*-webkit-transition-delay: 2s;*/
     /*transition-delay: 2s;*/
@@ -44,6 +48,7 @@ a {
 
 #site-header {
     padding-top: 0;
+    z-index: 10;
 }
 
 /* #### Header #### */
@@ -55,6 +60,7 @@ a {
     justify-content: space-between;
     align-items: center;
     border-radius: 2px;
+    z-index: 5;
 }
 
 .header-titles {
@@ -94,7 +100,7 @@ a {
     text-decoration: none;
     line-height: 3.5em;
     padding: 0 1.5em;
-    color: rgb(144, 144, 144);
+    color: #aaa;
     display: block;
 }
 
@@ -174,11 +180,11 @@ a {
 
 .mobile-menu-wrapper .mobile-menu-button {
     position: absolute;
-    top: 0;
+    top: 22px;
     right: 0;
     font-size: 2em;
     padding: 0 0.2em;
-    z-index: 4;
+    z-index: 10;
 }
 
 .mobile-menu-wrapper .mobile-menu-button:after {
@@ -251,6 +257,10 @@ a {
         display: block;
     }
 
+    .header-bar.m-active .header-titles {
+        visibility: hidden;
+    }
+
     #site-content {
         padding: 1em;
     }
@@ -262,28 +272,68 @@ a {
 }
 
 /* content */
-.columns-content {
+.wpt-two-cols {
     margin-top: 2em;
     flex-direction: row
 }
 
-.columns-content .wp-block-column {
+.wpt-two-cols .wp-block-column {
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 2px;
     padding: 1em;
 }
 
-.wp-block-column:not(:first-child) {
+.wpt-two-cols .wp-block-column:not(:first-child) {
     margin-left: 2em;
 }
 
 @media only screen and (max-width: 960px) {
-    .columns-content {
+    .wpt-two-cols {
         flex-direction: column;
     }
 
-    .wp-block-column:not(:first-child) {
+    .wpt-two-cols .wp-block-column:not(:first-child) {
         margin-left: 0;
         margin-top: 2em;
     }
+}
+
+.wpt-one-col,
+#site-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 2px;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.to-the-top-short {
+    display: none;
+}
+
+@media only screen and (max-width: 520px) {
+    .to-the-top-short {
+        display: block;
+    }
+
+    .to-the-top-long {
+        display: none;
+    }
+}
+
+#site-footer .section-inner {
+    display: flex;
+}
+
+#site-footer .section-inner > div {
+    flex-grow: 1;
+}
+
+#site-footer .nav-vertical {
+    text-align: right;
+    white-space: nowrap;
+    padding-left: 1em;
+}
+
+.final-tiles-gallery {
+    margin-top: 2em;
 }

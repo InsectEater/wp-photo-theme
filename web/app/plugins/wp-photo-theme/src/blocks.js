@@ -10,3 +10,4 @@
  */
 
 import './block-photo-gallery/block.js';
+import './block-comparator/block.js';

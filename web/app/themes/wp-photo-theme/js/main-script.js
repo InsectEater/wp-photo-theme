@@ -11,6 +11,7 @@ jQuery( '.menu-item-has-children' ).on( 'click', function( e ) {
 
 jQuery( '.mobile-menu-button' ).on( 'click', function() {
 	jQuery('.mobile-menu-wrapper').toggleClass( 'm-active' )
+	jQuery('.header-bar').toggleClass( 'm-active' )
 } );
 
 function wpt_preload_background_photos () {
@@ -37,7 +38,7 @@ function wpt_preload_background_photos () {
 function wpt_rotate_photos() {
 	wpt_preload_background_photos();
 	jQuery( '.wpt-page-banner' ).css( {'background-color': 'transparent', 'background-image' : 'none'} );
-	if ( ! wpt_js_data.background_photos &&  ! wpt_js_data.background_photos.length ) return;
+	if ( ! wpt_js_data.background_photos ||  ! wpt_js_data.background_photos.length ) return;
 	wpt_set_background_photo();
 	let transition_time =  wpt_js_data.transition_time ?  wpt_js_data.transition_time * 1 : 2000;
 

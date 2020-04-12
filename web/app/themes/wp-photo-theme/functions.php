@@ -1,6 +1,8 @@
 <?php
 function wpt_enqueue_styles() {
-    wp_enqueue_style( 'main-style',get_stylesheet_directory_uri() . '/style.css', [], wp_get_theme()->get('Version') );
+
+    wp_enqueue_style( 'font-comfortaa', 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap', [], wp_get_theme()->get('Version') );
+    wp_enqueue_style( 'main-style', get_stylesheet_directory_uri() . '/style.css', ['font-comfortaa'], wp_get_theme()->get('Version') );
 }
 add_action( 'wp_enqueue_scripts', 'wpt_enqueue_styles' );
 
@@ -22,8 +24,7 @@ function wpt_register_scripts() {
     $wpt_js_data = [
         'some_string' => __( 'Some string to translate', 'plugin-domain' ),
     ];
-
-    $wpt_js_data = wpt_inject_background_photos( $wpt_js_data );
+    $wpt_js_data = apply_filters( 'wpt_js_data', $wpt_js_data );
 	wp_localize_script( 'main-script', 'wpt_js_data', $wpt_js_data );
 
 }
@@ -58,3 +59,4 @@ function wpt_inject_background_photos( $wpt_js_data ) {
     $wpt_js_data[ 'transition_time' ] = $transition_time;
     return ( $wpt_js_data );
 }
+add_filter( 'wpt_js_data', 'wpt_inject_background_photos' );

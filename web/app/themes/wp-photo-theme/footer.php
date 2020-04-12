@@ -12,33 +12,34 @@
  */
 
 ?>
-<footer id="site-footer" role="contentinfo">
-    <div class="section-inner">
-        <div class="footer-credits">
-            <p class="footer-copyright">&copy;
-                <?php echo date_i18n( _x( 'Y', 'copyright date format', 'wpt' ) ); ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-            </p><!-- .footer-copyright -->
-        </div><!-- .footer-credits -->
+    <footer id="site-footer" role="contentinfo">
+        <div class="section-inner">
+            <div class="footer-credits">
+                    &copy;
+                    <?php echo date_i18n( _x( 'Y', 'copyright date format', 'wpt' ) ); ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+            </div><!-- .footer-credits -->
 
-        <a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
+            <div class="nav-vertical">
+                <a class="to-the-top" href="#site-header">
+    				<span class="to-the-top-long">
+    					<?php
                             /* translators: %s: HTML character for up arrow */
-                            printf( __( 'To the top %s', 'wpt' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-                            ?>
-						</span><!-- .to-the-top-long -->
-            <span class="to-the-top-short">
-							<?php
+                            printf( __( 'Към началото %s', 'wpt' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
+                        ?>
+    					</span><!-- .to-the-top-long -->
+                        <span class="to-the-top-short">
+    					<?php
                             /* translators: %s: HTML character for up arrow */
                             printf( __( 'Up %s', 'wpt' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-                            ?>
-						</span><!-- .to-the-top-short -->
-        </a><!-- .to-the-top -->
-    </div><!-- .section-inner -->
-</footer><!-- #site-footer -->
+                        ?>
+    					</span>
+                </a><!-- .to-the-top -->
+            </div>
+        </div><!-- .section-inner -->
+    </footer><!-- #site-footer -->
 
-<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 </div> <!-- wpt-page-banner -->
 </body>
 </html>
